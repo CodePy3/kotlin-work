@@ -1,5 +1,6 @@
 // Task 4.3: grade calculation using a when expression
 import kotlin.system.exitProcess
+import kotlin.math.roundToInt
 
 fun main(args: Array<String>) {
     if (args.size != 3) {
@@ -11,7 +12,7 @@ fun main(args: Array<String>) {
     val mod2 = args[1].toFloat()
     val mod3 = args[2].toFloat()
 
-    val overallMark = (mod1+mod2+mod3) / 3
+    val overallMark = ((mod1+mod2+mod3) / 3).roundToInt()
 
     when {
         overallMark >= 0 && overallMark <= 40.0 -> println("Fail")
