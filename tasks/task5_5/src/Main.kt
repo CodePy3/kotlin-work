@@ -8,8 +8,9 @@ fun main (args: Array<String>) {
     }
     val string0 = args[0]
     val string1 = args[1]
-    val result = string0 anagramOf string1
-    println(result)
+    if (string0 anagramOf string1) {
+        println("${args[0]} and ${args[1]} are anagrams!")
+    }
 
 
    

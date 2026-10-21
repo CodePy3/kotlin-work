@@ -1,5 +1,5 @@
 // Task 5.1.1: anagrams() function
-infix fun String.anagramOf(second: String) = 
+infix fun String.anagramOf(second: String): Boolean {
     if (this.length != second.length) {
         return false
     }
