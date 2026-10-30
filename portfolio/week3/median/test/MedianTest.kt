@@ -16,21 +16,24 @@ class MedianTest : FreeSpec({
         }
     } 
     "when size = 1" {
-        median(listOf(5.0f)) shouldBe 5.0f
+        median(listOf(5.0f)) shouldBe 5.0f // checks that median is correct with single whole number in list
+        median(listOf(2.4f)) shouldBe 2.4f // checks that the median is correct with single float in list
     }
     "when size = 2" { 
-        median(listOf(5.0f, 10.0f)) shouldBe 7.5f // checks that median is correct when its not itself or an int
-        median(listOf(5.0f, 5.0f)) shouldBe 5.0f // checks that median returns itself if list has repeated values
+        median(listOf(5.0f, 10.0f)) shouldBe 7.5f // checks that median is correct when it is a float
+        median(listOf(5.0f, 5.0f)) shouldBe 5.0f // checks that median is correct when same value is repeated
+        median(listOf(2.0f, 6.0f)) shouldBe 4.0f // checks that the median is correct when it is a whole number
     }
     "when size = 3" {
-        median(listOf(5.0f, 10.0f, 15.0f)) shouldBe 10.0f // checks median is calculated correctly
-        median(listOf(5.0f, 5.0f, 50.f)) shouldBe 5.0f // checks that median returns itself if list has repeated values
-    }
-    "when size = 3" {
-        median(listOf(5.0f, 10.0f, 15.0f)) shouldBe 10.0f
+        median(listOf(5.0f, 10.0f, 15.0f)) shouldBe 10.0f // checks median is calculated correctly when it is an whole number
+        median(listOf(5.0f, 7.2f, 15.0f)) shouldBe 7.2f // checks that median is correct when it is a float
+        median(listOf(10.0f, 1.0f, 2.0f)) shouldBe 2.0f // checks median is correct when list is not in ascending order
+
     }
     "when size = 4" {
-        median(listOf(5.0f, 10.0f, 15.0f, 20.0f)) shouldBe 12.5f
+        median(listOf(5.0f, 10.0f, 15.0f, 20.0f)) shouldBe 12.5f // checks that median is correct when it is not in the list
+        median(listOf(5.0f, 10.0f, 20.0f, 30.0f)) shouldBe 15.0f // checks median is calculated correctly when it is a whole num
+        median(listOf(10.0f, 4.0f, 12.0f, 1.0f)) shouldBe 7.0f // checks median is correct when list is not in ascending order
     }
 
 })
