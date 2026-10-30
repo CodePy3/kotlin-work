@@ -14,8 +14,9 @@ fun calcMedian(floatList: List<Float>): Float {
 }
 
 fun displayStats(floatList: List<Float>) {
-    println(floatList.min())
-    println(floatList.max())
-    println(floatList.average())
-    println(calcMedian(floatList))
+    val min = floatList.min()
+    val max = floatList.max()
+    val mean = floatList.average()
+    val median = calcMedian(floatList)
+    println("Min=$min, Max=$max, Mean=$mean, Median=$median")
 }
