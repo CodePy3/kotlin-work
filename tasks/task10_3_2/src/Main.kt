@@ -2,8 +2,11 @@
 
 import kotlin.system.exitProcess
 
-fun display(text: String) {
-    println(text.uppercase())
+fun display(text: String?) {
+    when (text) {
+        null -> println("?")
+        else -> display(text)
+    }
 }
 
 fun main(args: Array<String>) {
@@ -17,6 +20,5 @@ fun main(args: Array<String>) {
     val word = args[0].lowercase()
     val result = translate[word]
 
-    //println(result)
     display(result)
 }
