@@ -5,3 +5,4 @@ class CurrencyConverter(val service: ExchangeRateService) {
         return service.rateFor(currency) * amount
     }
 }
+ 

@@ -23,3 +23,4 @@ class ExchangeRateService {
         throw IllegalArgumentException("Unsupported currency: $currency")
     }
 }
+ 

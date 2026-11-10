@@ -5,17 +5,17 @@ open class BankAccount(val holder: String) {
         require(holder.isNotBlank()) { "Account holder must not be blank" }
     }
 
-    var balance: Int = 0
+    var balance: Double = 0.0
         private set(value) {
             field = value
         }
 
-    fun deposit(amount: Int) {
+    fun deposit(amount: Double) {
         require(amount > 0) { "Deposit amount must be greater than 0" }
         balance += amount
     }
 
-    fun withdraw(amount: Int) {
+    fun withdraw(amount: Double) {
         require(amount > 0) { "Withdrawal amount must be greater than 0" }
         require(amount <= balance) { "Withdrawal amount cannot exceed balance" }
         balance -= amount
